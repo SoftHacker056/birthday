@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Birthday Countdown 🎂</title>
+    <link rel="stylesheet" href="birthday.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Birthday Date Entry Modal -->
+    <div class="birthday-modal" id="birthdayModal">
+        <div class="birthday-modal-content">
+            <div class="modal-icon">🎉</div>
+            <h2>Enter Your Birth Date 🎂</h2>
+            <p>Let's create your personalized birthday countdown!</p>
+            <input 
+                type="date" 
+                id="birthDateInput" 
+                max="2099-12-31"
+                min="1900-01-01"
+            >
+            <button class="modal-btn" onclick="createBirthdayPage()">Create My Birthday Page</button>
+            <p class="modal-note">Website crafted with friendship by Piyush 💙</p>
+        </div>
+    </div>
+    
+    <!-- Main Birthday Page -->
+    <div class="birthday-container" id="birthdayPage" style="display: none;">
+        <!-- Confetti Container -->
+        <div class="confetti-container" id="confettiContainer"></div>
+        
+        <!-- Balloons -->
+        <div class="balloons-container">
+            <span class="balloon">🎈</span>
+            <span class="balloon">🎈</span>
+            <span class="balloon">🎈</span>
+            <span class="balloon">🎈</span>
+            <span class="balloon">🎈</span>
+        </div>
+        
+        <!-- Content -->
+        <div class="content-wrapper">
+            <h1 class="birthday-title">Your Birthday Countdown 🎂</h1>
+            <p class="birthday-subtitle">A small birthday surprise for you</p>
+            
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <div class="birthday-message">
+                <p>🎉 Your special day is coming! 🎉</p>
+                <p id="targetDateText"></p>
+            </div>
+            
+            <!-- Music Player -->
+            <div class="music-section">
+                <p>🎵 Birthday Music</p>
+                <button class="music-btn" id="musicBtn" onclick="toggleBirthdayMusic()">
+                    <span id="playIcon">▶️</span>
+                    <span id="pauseIcon" style="display: none;">⏸️</span>
+                </button>
+                <audio id="birthdayMusic" loop>
+                    <source src="music/motivational.mp3" type="audio/mpeg">
+                    <source src="music/motivational.ogg" type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="birthday-footer">
+            <p>Made by Piyush 💙</p>
+            <p class="footer-click" onclick="checkAdminAccess()">Website crafted with friendship</p>
+        </footer>
+    </div>
+    
+    <script src="birthday.js"></script>
+</body>
+</html>
